@@ -1,0 +1,17 @@
+// mixins
+
+// clearfix so you don't have to add non-semantic .clear divs to everything
+@mixin clearfix
+  *display: inline-block
+  &:after
+    content: " "
+    display: block
+    height: 0
+    clear: both
+    visibility: hidden
+    
+// quick way to do rounded borders in a cross browser friendly way
+@mixin rounded($radius)
+  -moz-border-radius: $radius
+  -webkit-border-radius: $radius
+  border-radius: $radius

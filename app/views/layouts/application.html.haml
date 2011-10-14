@@ -1,0 +1,16 @@
+!!! Strict
+%html{:xmlns => "http://www.w3.org/1999/xhtml"}
+  %head
+    %meta{:"http-equiv" => "Content-Type", :content => "text/html; charset=utf-8"}/
+    = csrf_meta_tag
+    %title rails_box
+    %script{:type => "text/javascript", :src => "https://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.min.js"}
+    %script{:type => "text/javascript", :src => "https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.12/jquery-ui.min.js"}
+    = stylesheet_link_tag 'reset','styles'
+    != google_analytics_script
+  %body
+    .wrapper
+      .header
+        = link_to "rails_box", root_path, :class => "logo"
+      .content= yield
+      .footer!= "&copy; #{Time.now.year} rails_box"
